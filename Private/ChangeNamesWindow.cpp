@@ -118,41 +118,41 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 	TailText = FText::FromString("");
 	this->ChildSlot
 	[
-		//²éÔÄhttps://docs.unrealengine.com/en-us/Programming/Slate/Widgets
-		//²éÔÄhttps://forums.unrealengine.com/community/community-content-tools-and-tutorials/61539-tutorial-slate-slistview-example?89917-Tutorial-Slate-SListView-Example=
+		//æŸ¥é˜…https://docs.unrealengine.com/en-us/Programming/Slate/Widgets
+		//æŸ¥é˜…https://forums.unrealengine.com/community/community-content-tools-and-tutorials/61539-tutorial-slate-slistview-example?89917-Tutorial-Slate-SListView-Example=
 		SNew(SBox)
 		.MaxDesiredHeight(InArgs._MaxWindowHeight)
 		.MaxDesiredWidth(InArgs._MaxWindowWidth)
 		[
 
-			SNew(SVerticalBox)   //VerticalBox´¹Ö±µÄºĞ×Ó
-			+ SVerticalBox::Slot()//.FillHeight(1)	//¹Òµã1 Î»ÖÃ
+			SNew(SVerticalBox)   //VerticalBoxå‚ç›´çš„ç›’å­
+			+ SVerticalBox::Slot()//.FillHeight(1)	//æŒ‚ç‚¹1 ä½ç½®
 			.AutoHeight()
-			.Padding(2)	//Ìî³ä
+			.Padding(2)	//å¡«å……
 			[
-				SAssignNew(ImportTypeDisplay, SBox)	//ºĞ×Ó×éºÏ
+				SAssignNew(ImportTypeDisplay, SBox)	//ç›’å­ç»„åˆ
 			]
-			+ SVerticalBox::Slot()//.FillHeight(1)	//¹Òµã1 Î»ÖÃ
+			+ SVerticalBox::Slot()//.FillHeight(1)	//æŒ‚ç‚¹1 ä½ç½®
 			.AutoHeight()
-			.Padding(2)	//Ìî³ä
+			.Padding(2)	//å¡«å……
 			[
-				SAssignNew(ImportTypeDisplay1, SBox)	//ºĞ×Ó×éºÏ
+				SAssignNew(ImportTypeDisplay1, SBox)	//ç›’å­ç»„åˆ
 			]
-			+ SVerticalBox::Slot()//.FillHeight(1)	//¹Òµã1 Î»ÖÃ
+			+ SVerticalBox::Slot()//.FillHeight(1)	//æŒ‚ç‚¹1 ä½ç½®
 			.AutoHeight()
-			.Padding(2)	//Ìî³ä
+			.Padding(2)	//å¡«å……
 			[
-				SAssignNew(ImportTypeDisplay2, SBox)	//ºĞ×Ó×éºÏ
+				SAssignNew(ImportTypeDisplay2, SBox)	//ç›’å­ç»„åˆ
 			]
-			+ SVerticalBox::Slot()//.FillHeight(1)	//¹Òµã1 Î»ÖÃ
+			+ SVerticalBox::Slot()//.FillHeight(1)	//æŒ‚ç‚¹1 ä½ç½®
 			.AutoHeight()
-			.Padding(2)	//Ìî³ä
+			.Padding(2)	//å¡«å……
 			[
-				SAssignNew(ImportTypeDisplay3, SBox)	//ºĞ×Ó×éºÏ
+				SAssignNew(ImportTypeDisplay3, SBox)	//ç›’å­ç»„åˆ
 			]
 
-	//listviewÊµÑé
-			+SVerticalBox::Slot() //¹Òµã4
+	//listviewå®éªŒ
+			+SVerticalBox::Slot() //æŒ‚ç‚¹4
 			.AutoHeight()
 			.Padding(2)
 			[
@@ -160,9 +160,9 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 				.MaxDesiredHeight(650.0f)
 				.WidthOverride(400.0f)
 			]
-			+ SVerticalBox::Slot()	//¹Òµã5
+			+ SVerticalBox::Slot()	//æŒ‚ç‚¹5
 			.AutoHeight()
-			.HAlign(HAlign_Right)	//Ë®Æ½ÓÒ¶ÔÆë
+			.HAlign(HAlign_Right)	//æ°´å¹³å³å¯¹é½
 			.Padding(2)
 			[
 				SNew(SUniformGridPanel)
@@ -192,20 +192,20 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 
 	ImportTypeDisplay->SetContent(
 		SNew(SBorder)
-		.Padding(FMargin(3))//Íâ±ß¾à
+		.Padding(FMargin(3))//å¤–è¾¹è·
 		.BorderImage(FEditorStyle::GetBrush("ToolPanel.GroupBorder"))
 		[
-			SNew(SHorizontalBox)	//Ë®Æ½ºĞ×Ó
-			+ SHorizontalBox::Slot() //¹Òµã3
+			SNew(SHorizontalBox)	//æ°´å¹³ç›’å­
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
 			.AutoWidth()
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			.AutoWidth()
 			[
-				SNew(STextBlock)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(STextBlock)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.Font(FEditorStyle::GetFontStyle("CurveEd.LabelFont"))
-				.Text(LOCTEXT("First_CurrentFileTitle", "Begin :"))//µ±Ç°ÎÄµµ
+				.Text(LOCTEXT("First_CurrentFileTitle", "Begin :"))//å½“å‰æ–‡æ¡£
 			]
-			+ SHorizontalBox::Slot() //¹Òµã Combobox
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹ Combobox
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(300.f)
 			.Padding(2)
@@ -220,14 +220,14 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 					.Text(this, &ChangeNamesWindow::GetCurrentItemLabel)
 				]
 			]
-			+ SHorizontalBox::Slot() //¹Òµã4 
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹4 
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(300.f)
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
 				SNew(SEditableTextBox)
 				.MinDesiredWidth(200.f)
-				.Text(this, &ChangeNamesWindow::GetInputText)//×ÔÉèddd   InArgs._FullPath
+				.Text(this, &ChangeNamesWindow::GetInputText)//è‡ªè®¾ddd   InArgs._FullPath
 				.OnTextCommitted(this, &ChangeNamesWindow::OnInputChanged)
 			]
 
@@ -240,20 +240,20 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 
 	ImportTypeDisplay2->SetContent(
 		SNew(SBorder)
-		.Padding(FMargin(3))//Íâ±ß¾à
+		.Padding(FMargin(3))//å¤–è¾¹è·
 		.BorderImage(FEditorStyle::GetBrush("ToolPanel.GroupBorder"))
 		[
-			SNew(SHorizontalBox)	//Ë®Æ½ºĞ×Ó
-			+ SHorizontalBox::Slot() //¹Òµã3
+			SNew(SHorizontalBox)	//æ°´å¹³ç›’å­
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
 			.AutoWidth()
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			.AutoWidth()
 			[
-				SNew(STextBlock)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(STextBlock)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.Font(FEditorStyle::GetFontStyle("CurveEd.LabelFont"))
-				.Text(LOCTEXT("Last_CurrentFileTitle", "End    :"))//µ±Ç°ÎÄµµ
+				.Text(LOCTEXT("Last_CurrentFileTitle", "End    :"))//å½“å‰æ–‡æ¡£
 			]
-			+ SHorizontalBox::Slot() //¹Òµã Combobox
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹ Combobox
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(300.f)
 			.Padding(2)
@@ -268,14 +268,14 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 					.Text(this, &ChangeNamesWindow::GetCurrentItemLabel2)
 				]
 			]
-			+ SHorizontalBox::Slot() //¹Òµã4 
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹4 
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(300.f)
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
 				SNew(SEditableTextBox)
 				.MinDesiredWidth(200.f)
-				.Text(this, &ChangeNamesWindow::GetInputText2)//×ÔÉèddd   InArgs._FullPath
+				.Text(this, &ChangeNamesWindow::GetInputText2)//è‡ªè®¾ddd   InArgs._FullPath
 				.OnTextCommitted(this, &ChangeNamesWindow::OnInputChanged2)
 			]
 
@@ -286,29 +286,29 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 
 	ImportTypeDisplay3->SetContent(
 		SNew(SBorder)
-		.Padding(FMargin(3))//Íâ±ß¾à
+		.Padding(FMargin(3))//å¤–è¾¹è·
 		.BorderImage(FEditorStyle::GetBrush("ToolPanel.GroupBorder"))
 		[
-			SNew(SHorizontalBox)	//Ë®Æ½ºĞ×Ó
-			+ SHorizontalBox::Slot() //¹Òµã3
+			SNew(SHorizontalBox)	//æ°´å¹³ç›’å­
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
 			.AutoWidth()
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
-				SNew(STextBlock)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(STextBlock)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.Font(FEditorStyle::GetFontStyle("CurveEd.LabelFont"))
-				.Text(LOCTEXT("Start_NumTitle", "Add Num From: "))//µ±Ç°ÎÄµµ
+				.Text(LOCTEXT("Start_NumTitle", "Add Num From: "))//å½“å‰æ–‡æ¡£
 			]
-			+ SHorizontalBox::Slot() //¹Òµã3
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			.MaxWidth(50.f)
 			[
-				SNew(SCheckBox)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(SCheckBox)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.OnCheckStateChanged(this, &ChangeNamesWindow::OnAddNumCheckStateChanged)
 			]
-			+ SHorizontalBox::Slot() //¹Òµã Combobox
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹ Combobox
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(50.f)
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
 				SNew(SSpinBox<int>)
 				.MinDesiredWidth(50.f)
@@ -317,18 +317,18 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 				.OnValueChanged(this, &ChangeNamesWindow::OnNumChanged)
 
 			]
-			+ SHorizontalBox::Slot() //¹Òµã3
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
 			.AutoWidth()
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
-				SNew(STextBlock)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(STextBlock)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.Font(FEditorStyle::GetFontStyle("CurveEd.LabelFont"))
-				.Text(LOCTEXT("Width_NumTitle", "   Num Width: "))//µ±Ç°ÎÄµµ
+				.Text(LOCTEXT("Width_NumTitle", "   Num Width: "))//å½“å‰æ–‡æ¡£
 			]
-			+ SHorizontalBox::Slot() //¹Òµã Combobox
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹ Combobox
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(50.f)
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
 				SNew(SSpinBox<int>)
 				.MinDesiredWidth(50.f)
@@ -343,34 +343,34 @@ void ChangeNamesWindow::Construct(const FArguments& InArgs)
 
 	ImportTypeDisplay1->SetContent(
 		SNew(SBorder)
-		.Padding(FMargin(3))//Íâ±ß¾à
+		.Padding(FMargin(3))//å¤–è¾¹è·
 		.BorderImage(FEditorStyle::GetBrush("ToolPanel.GroupBorder"))
 		[
-			SNew(SHorizontalBox)	//Ë®Æ½ºĞ×Ó
-			+ SHorizontalBox::Slot() //¹Òµã3
+			SNew(SHorizontalBox)	//æ°´å¹³ç›’å­
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
 			.AutoWidth()
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
-				SNew(STextBlock)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(STextBlock)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.Font(FEditorStyle::GetFontStyle("CurveEd.LabelFont"))
-				.Text(LOCTEXT("Middle_StrTitle", "Change Middle: "))//µ±Ç°ÎÄµµ
+				.Text(LOCTEXT("Middle_StrTitle", "Change Middle: "))//å½“å‰æ–‡æ¡£
 			]
-			+ SHorizontalBox::Slot() //¹Òµã3
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹3
 			.AutoWidth()
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			.AutoWidth()
 			[
-				SNew(SCheckBox)	//ÎÄ×Ö¿Ø¼ş ÎÄ¼şÂ·¾¶
+				SNew(SCheckBox)	//æ–‡å­—æ§ä»¶ æ–‡ä»¶è·¯å¾„
 				.OnCheckStateChanged(this, &ChangeNamesWindow::OnChangeCheckStateChanged)
 			]
-			+ SHorizontalBox::Slot() //¹Òµã4 
+			+ SHorizontalBox::Slot() //æŒ‚ç‚¹4 
 			.Padding(5, 0, 0, 0)
 			.MaxWidth(300.f)
-			.VAlign(VAlign_Center)	//´¹Ö±¶ÔÆëÖĞĞÄ¶ÔÆë
+			.VAlign(VAlign_Center)	//å‚ç›´å¯¹é½ä¸­å¿ƒå¯¹é½
 			[
 				SNew(SEditableTextBox)
 				.MinDesiredWidth(200.f)
-				.Text(this, &ChangeNamesWindow::GetInputText1)//×ÔÉèddd   InArgs._FullPath
+				.Text(this, &ChangeNamesWindow::GetInputText1)//è‡ªè®¾ddd   InArgs._FullPath
 				.OnTextCommitted(this, &ChangeNamesWindow::OnInputChanged1)
 			]
 
@@ -497,7 +497,7 @@ FReply ChangeNamesWindow::OnGetExportFolderName()
 {
 	return FReply::Handled();
 }
-//½øĞĞĞÅÏ¢ËÑ¼¯
+//è¿›è¡Œä¿¡æ¯æœé›†
 FReply ChangeNamesWindow::OnGetFolderName()
 {
 
@@ -518,7 +518,7 @@ FReply ChangeNamesWindow::OnGetFolderName()
 
 void ChangeNamesWindow::SetNames()
 {
-	//³õÊ¼»¯²ÄÖÊ¶ÔÏóÁĞ±í
+	//åˆå§‹åŒ–æè´¨å¯¹è±¡åˆ—è¡¨
 //	TArray<UAlexMaterial> UMs;
 	FString FrontStr = FrontText.ToString();
 	FString TailStr = TailText.ToString();
@@ -534,7 +534,7 @@ void ChangeNamesWindow::SetNames()
 	FText Message1;
 	for (int32 i = 0; i < SelectedAssets.Num(); i++)
 	{
-		myObj = Cast<UStaticMesh>(SelectedAssets[i].GetAsset());
+		myObj = Cast<UObject>(SelectedAssets[i].GetAsset());
 		Objs.Add(myObj);
 
 		FString OldName = myObj->GetName();
@@ -882,7 +882,7 @@ UMaterialInstanceConstant* ChangeNamesWindow::CreateMaterialInstance(FString Mat
 	}
 
 	FString Name = MaterialName;
-	PackageName1 += Name;//ĞÂ²ÄÖÊ
+	PackageName1 += Name;//æ–°æè´¨
 
 	FString Package2 = PackageName1 + "." + Name;
 	TArray<UObject*> AssetsIn2;
@@ -904,7 +904,7 @@ UMaterialInstanceConstant* ChangeNamesWindow::CreateMaterialInstance(FString Mat
 		InPaths0.Add(ExportFolder);
 		FARFilter Filter0;
 		Filter0.bRecursivePaths = true;
-		//»ñÈ¡Ä¿Â¼×ÊÔ´Êı¾İÁ÷
+		//è·å–ç›®å½•èµ„æºæ•°æ®æµ
 		for (int32 PathIdx = 0; PathIdx < InPaths0.Num(); ++PathIdx)
 		{
 			new (Filter0.PackagePaths) FName(*InPaths0[PathIdx]);
@@ -987,18 +987,18 @@ UMaterialInstanceConstant* ChangeNamesWindow::CreateMaterialInstance(FString Mat
 	UTexture * A;
 
 
-	//Õë¶ÔÍ¼Æ¬±äÁ¿
+	//é’ˆå¯¹å›¾ç‰‡å˜é‡
 
 	UnrealMaterialInstance->GetTextureParameterValue(FName("Texture"), A);
 	UnrealMaterialInstance->SetTextureParameterValueEditorOnly(FName("Texture"), A);
 
 	/*
-	//Õë¶ÔÏòÁ¿±äÁ¿
+	//é’ˆå¯¹å‘é‡å˜é‡
 	UnrealMaterialInstance->GetVectorParameterValue(FName("LightColor"), CurrentColor);
 	CurrentColor = FLinearColor(1, 1, 1, 1);
 	UnrealMaterialInstance->SetVectorParameterValueEditorOnly(FName("LightColor"), CurrentColor);
 
-	//Õë¶ÔÊıÖµ±äÁ¿
+	//é’ˆå¯¹æ•°å€¼å˜é‡
 	p = 0;
 	m = 1;
 	UnrealMaterialInstance->SetScalarParameterValueEditorOnly(FName("Power"), p);
